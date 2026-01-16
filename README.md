@@ -81,7 +81,7 @@ Each solution aims to be:
 
 ## 🌟 Quote
 
-> **“Consistency beats intensity.”**
+> **“I tried my best.”**
 
 Happy Coding! 🚀
 
