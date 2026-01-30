@@ -26,7 +26,7 @@ Solutions are pushed automatically using a **GitHub extension**.
 
 | Metric | Status |
 |------|-------|
-| Total Problems Solved | ⭐ 90+ |
+| Total Problems Solved | ⭐ 100+ |
 | Difficulty Coverage | Easy • Medium |
 | Daily Practice | 🔥 Ongoing |
 | Repository Updates | 🚀 Automatic |
