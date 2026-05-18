@@ -1,37 +1,44 @@
 class Solution {
 public:
+
+    int num(char c)
+    {
+        return c -'0';
+    }
+    char chr(int n)
+    {
+        return n + '0';
+    }
+
     string addStrings(string num1, string num2) {
+        int i1=num1.length()-1,i2=num2.length()-1,n;
 
-        int n1 = num1.length(), n2 = num2.length();
+        string ans(max(i1+1,i2+1),'0');
+        int c=0;
 
-        // Pad shorter string with leading zeros
-        if (n1 > n2) {
-            num2.insert(num2.begin(), n1 - n2, '0');
-        } else if (n2 > n1) {
-            num1.insert(num1.begin(), n2 - n1, '0');
+        reverse(num1.begin(),num1.end());
+        reverse(num2.begin(),num2.end());
+
+        
+
+        for(int i=0;i<max(i1+1,i2+1);i++)
+        {
+            int d1=(i<i1+1)?num(num1[i]):0;
+            int d2=(i<i2+1)?num(num2[i]):0;
+            n=d1 + d2 + c;
+            ans[i]=chr(n%10);
+            n=n/10;
+            c=n%10;
         }
+        if(c) ans.push_back(c+'0');
 
-        int carry = 0;
-        int n = num1.length();
-        string ans(n + 1, '0');
+        
 
-        // Add from right to left
-        for (int i = n - 1; i >= 0; i--) {
-            int d1 = num1[i] - '0';
-            int d2 = num2[i] - '0';
+        reverse(ans.begin(),ans.end());
 
-            int sum = d1 + d2 + carry;
-            ans[i + 1] = (sum % 10) + '0';
-            carry = sum / 10;
-        }
+       return ans;
 
-        // Handle final carry
-        if (carry) {
-            ans[0] = carry + '0';
-        } else {
-            ans.erase(ans.begin()); // remove leading zero
-        }
 
-        return ans;
+        
     }
 };
